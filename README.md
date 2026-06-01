@@ -47,7 +47,7 @@ LITELLM_PORT=4000
 model_list:
   - model_name: ollama-qwen               # クライアントから指定するモデル名
     litellm_params:
-      model: ollama/qwen3.5:35b              # Ollama側に登録されているモデル名
+      model: ollama/qwen3.6:35b              # Ollama側に登録されているモデル名
       api_base: os.environ/OLLAMA_API_BASE
       # 同時実行制限 (この制限を超えたリクエストは自動でキューに入り、順次実行されます)
       max_parallel_requests: 1
