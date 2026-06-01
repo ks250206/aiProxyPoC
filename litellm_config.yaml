@@ -1,0 +1,16 @@
+model_list:
+  - model_name: ollama-qwen
+    litellm_params:
+      model: ollama/qwen3.6:35b
+      api_base: os.environ/OLLAMA_API_BASE
+      # 同時実行制限（この値を超えたリクエストはキューに入ります）
+      max_parallel_requests: 1
+
+
+
+litellm_settings:
+  # キューで待機する可能性を考慮し、タイムアウト時間を長めに設定 (秒単位)
+  request_timeout: 600
+  # Prometheusメトリクスエンドポイントを有効化
+  callbacks:
+    - prometheus
